@@ -1,0 +1,867 @@
+1)Find out duplicate number between 1 to N numbers.
+
+import java.util.HashSet;
+
+
+
+//Find out duplicate number between 1 to N numbers. using bruteforce method
+    // same for finding duplicate in string using  String Instead
+public class DuplicateNumber {
+public void duplicate(int arr[]){
+int n;
+for(int i =0;i<=arr.length-1;i++){
+for(int j =i+1;j<=arr.length-1;j++){
+   if(arr[i]==arr[j]&& (i != j)){
+
+       System.out.println("duplicate is " + arr[j]);
+
+   }}
+}}
+public void UsingHAshSet(int arr[]){
+    HashSet<Integer> hs = new HashSet<Integer>();
+    for(int i :arr) {
+    if(!hs.add(i)){
+
+        System.out.println("duplicateelement is " + i);
+    }
+
+    }
+}
+    public static void main(String[] args) {
+    int arr [] = {1,2,3,4,1,5,4,4,};
+
+
+        DuplicateNumber dp = new DuplicateNumber();
+dp.duplicate(arr);
+dp.UsingHAshSet(arr);
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+2)Find out middle index where sum of both ends are equal.
+
+
+
+
+
+3)Write a singleton class.
+
+5)Write a .
+
+public class ReverseAStringUsingRecursiveALgorithim {
+
+
+
+    static String recursiveMethod(String str)
+
+    {
+
+        if ((null == str) || (str.length() <= 1))
+
+        {
+
+            return str;
+
+        }
+
+
+
+        return recursiveMethod(str.substring(1)) + str.charAt(0);
+
+    }
+
+
+
+
+
+    public static void main(String[] args) {
+
+        System.out.println(ReverseAStringUsingRecursiveALgorithim.recursiveMethod("abcd dcba")) ;
+
+
+
+    }
+
+}
+
+
+
+
+
+
+6)Write a program to reverse a number.
+
+
+
+public int reverseNumber(int number){
+
+int reverse =0;
+
+while(number!=0){
+
+
+
+    reverse = reverse*10 +number%10;
+
+    number =number/10;
+
+
+
+}
+
+return reverse;
+
+}
+
+
+
+    public static void main(String[] args) {
+
+        ReverseANumber re =new ReverseANumber();
+
+        System.out.println(re.reverseNumber(1234));
+
+    }
+
+}
+
+
+
+
+
+
+
+
+7)Write a program to convert decimal number to binary format.
+
+
+
+public class DecimalToBinary {
+
+public String Binary(int number ){
+
+    int remain=0;
+
+    String binary ="";
+
+    while(number!=0){
+
+        binary =  number%2 +binary ;
+
+        number = number/2;
+
+    }
+
+    return binary;
+
+
+
+}
+
+
+
+    public static void main(String[] args) {
+
+        DecimalToBinary dc = new DecimalToBinary();
+
+        System.out.println(dc.Binary(50));
+
+    }
+
+}
+
+
+8)Write a program to find perfect number or not.
+
+
+public class PerfectNumber {
+
+public void Perfect(int number){
+
+    int num =0;
+
+    for(int i=1;i<=number/2;i++){
+
+
+
+        if(number%i==0){
+
+
+
+
+
+            num = num +i;
+
+        }
+
+
+
+    }
+
+    if(number==num){
+
+        System.out.println("perfect number ");
+
+
+
+    }else{
+
+
+
+        System.out.println("not a perfect number");
+
+    }
+
+}
+
+
+
+    public static void main(String[] args) {
+
+        PerfectNumber pf =  new PerfectNumber();
+
+        pf.Perfect(28);
+
+    }
+
+}
+
+
+
+
+9)Write a program to find maximum repeated words from a file.
+
+
+
+
+
+
+
+10)Write a program to find out duplicate characters in a string.
+
+import java.util.HashMap;
+
+import java.util.Set;
+
+
+
+
+public class DuplicateCharactersInString {
+
+public void DuplicateCount(String abc){
+
+
+
+    HashMap<Character,Integer> hash = new HashMap<Character, Integer>();
+
+    char[] a = abc.toCharArray();
+
+for(char c:a){
+
+
+
+    if(hash.containsKey(c)){
+
+hash.put(c,hash.get(c)+1);
+
+
+
+    }
+
+    else{
+
+
+
+        hash.put(c,1);
+
+    }
+
+
+
+}
+
+Set<Character> setString = hash.keySet();
+
+    for(Character ch :setString){
+
+
+
+        if(hash.get(ch)>1){
+
+            System.out.println(ch +" : "+ hash.get(ch));
+
+
+
+        }
+
+
+
+    }
+
+}
+
+
+
+    public static void main(String[] args) {
+
+        DuplicateCharactersInString dup = new DuplicateCharactersInString();
+
+        dup.DuplicateCount("JavaJ2EE");
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+11)Write a program to find top two maximum numbers in a array.
+
+
+
+public class MAX2Integer {
+
+public void max2(int [] arr){
+
+
+
+
+
+        int maxOne = 0;
+
+        int maxTwo = 0;
+
+
+
+        for(int i:arr){
+
+
+
+            if(maxOne < i){
+
+                maxTwo = maxOne;
+
+                maxOne =i;
+
+            } else if(maxTwo < i){
+
+                maxTwo = i;
+
+            }
+
+        }
+
+
+
+
+
+    System.out.println("First Maximum Number: "+maxOne);
+
+    System.out.println("Second Maximum Number: "+maxTwo);
+
+}
+
+
+
+    public static void main(String[] args) {
+
+    int arr[] ={1,40,68,12,90,45}  ;
+
+    MAX2Integer max =new MAX2Integer();
+
+        max.max2(arr);
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+12)Write a program to sort a map by value.
+
+
+
+
+
+
+
+13)Write a program to find common elements between two arrays.
+
+
+
+
+
+public class CommonElementInAArray {
+
+public void common(int arr1[],int arr2[]){
+
+    for(int i = 0 ;i<arr1.length;i++){
+
+
+
+        for(int j =0 ;j<arr2.length;j++){
+
+
+
+            if(arr1[i]==arr2[j]){
+
+
+
+                System.out.println(arr1[i]);
+
+            }
+
+
+
+        }
+
+    }
+
+
+
+
+
+}
+
+
+
+    public static void main(String[] args) {
+
+    int[] arr2 = {1,2,3,4,5,6,7};
+
+    int []arr1 = {1,2,3};
+
+    CommonElementInAArray c = new CommonElementInAArray();
+
+        c.common(arr1,arr2);
+
+    }
+
+}
+
+
+
+
+14)How to swap two numbers without using temporary variable?
+
+
+public class SwapWithout3Variable {
+
+public void swap(int a ,int b){
+
+    a=a+b;
+
+    b=a-b;
+
+    a=a-b;
+
+    System.out.println(a);
+
+    System.out.println(b);
+
+
+
+
+
+}
+
+
+
+    public static void main(String[] args) {
+
+        SwapWithout3Variable s =  new SwapWithout3Variable();
+
+        s.swap(10,20);
+
+    }
+
+}
+
+
+15)Write a program to print fibonacci series
+
+class FibonacciExample1{
+
+    public static void main(String args[])
+
+    {
+
+        int n1=0,n2=1,n3,i,count=10;
+
+        System.out.print(n1+" "+n2);//printing 0 and 1
+
+
+
+        for(i=2;i<count;++i)//loop starts from 2 because 0 and 1 are already printed
+
+        {
+
+            n3=n1+n2;
+
+            System.out.print(" "+n3);
+
+            n1=n2;
+
+            n2=n3;
+
+        }
+
+
+
+    }}
+
+
+
+
+.
+
+16)Write a program to find sum of each digit in the given number using recursion.
+
+public class sumofEachDigit {
+
+    int sum1 =0;
+
+public int  sum(int number){
+
+
+
+ if(number==0){
+
+
+
+     return sum1;
+
+ }
+
+else{
+
+
+
+     sum1 = sum1+(number%10);
+
+ sum(number/10);
+
+ }
+
+
+
+return sum1;
+
+
+
+}
+
+
+
+
+17)Write a program to check the given number is a prime number or not?
+
+
+
+For(int 2)
+
+If(number%i==0)
+
+Return true
+
+
+
+18)Write a program to find the given number is Armstrong number or not?
+
+    public double  check(int number ){
+
+    double sum =0;
+
+    while(number!=0){
+
+     sum =  (sum +Math.pow(number%10,3));
+
+     number = number/10;
+
+
+
+    }
+
+
+
+    return sum;
+
+
+
+}
+
+
+
+    public static void main(String[] args) {
+
+        AmstrongNumber am =  new AmstrongNumber();
+
+        System.out.println( am.check(371));
+
+
+
+
+
+
+19)Write a program to convert binary to decimal number.
+
+ int decimal = 0;
+
+        int power = 0;
+
+        while(true){
+
+            if(binary == 0){
+
+                break;
+
+            } else {
+
+                int tmp = binary%10;
+
+                decimal += tmp*Math.pow(2, power);
+
+                binary = binary/10;
+
+                power++;
+
+            }
+
+        }
+
+        return decimal;
+
+    }
+
+
+
+
+
+20)Write a program to check the given number is binary number or not?
+
+
+
+
+
+
+
+
+
+21)Write a program for Bubble Sort in java.
+
+
+
+      static void bubbleSort(int[] arr) {
+
+        int n = arr.length;
+
+        int temp = 0;
+
+         for(int i=0; i < n; i++){
+
+                 for(int j=1; j < (n-i); j++){
+
+                          if(arr[j-1] > arr[j]){
+
+                                 //swap elements
+
+                                 temp = arr[j-1];
+
+                                 arr[j-1] = arr[j];
+
+                                 arr[j] = temp;
+
+                         }                                           }         }      }
+
+
+
+
+
+
+
+22)Write a program for Insertion Sort in java.
+
+    int n = array.length;
+
+        for (int j = 1; j < n; j++) {
+
+            int key = array[j];
+
+            int i = j-1;
+
+            while ( (i > -1) && ( array [i] > key ) ) {
+
+                array [i+1] = array [i];
+
+                i--;
+
+            }
+
+            array[i+1] = key;
+
+        }
+
+    }
+
+
+
+
+
+23)Write a program to implement hashcode and equals.
+
+
+
+24)How to get distinct elements from an array by avoiding duplicate elements?
+
+ public static void printDistinctElements(int[] arr){
+
+
+
+        for(int i=0;i<arr.length;i++){
+
+            boolean isDistinct = false;
+
+            for(int j=0;j<i;j++){
+
+                if(arr[i] == arr[j]){
+
+                    isDistinct = true;
+
+                    break;
+
+                }
+
+            }
+
+            if(!isDistinct){
+
+                System.out.print(arr[i]+" ");
+
+            }
+
+        }
+
+    }
+
+
+
+
+
+25)Write a program to get distinct word list from the given file.
+
+
+
+
+
+26)Write a program to get a line with max word count from the given file.
+
+
+
+27)Write a program to convert string to number without using Integer.parseInt() method.
+
+
+
+28)Write a program to find two lines with max characters in descending order.
+
+
+
+
+
+30)Find longest substring without repeating characters.
+
+
+
+public int lengthOfLongestSubstring(String s) {
+
+    if(s==null || s.length()==0){
+
+        return 0;
+
+    }
+
+
+
+    int start=0;
+
+    int max = 0;
+
+
+
+    HashSet<Character> set = new HashSet<Character>();
+
+    for(int i=0; i<s.length(); i++){
+
+        char c = s.charAt(i);
+
+
+
+        if(!set.contains(c)){
+
+            set.add(c);
+
+
+
+            max = Math.max(max, i-start+1);
+
+        }else{
+
+            for(int j=start; j<i; j++){
+
+                set.remove(s.charAt(j));
+
+
+
+                if(s.charAt(j)==c){
+
+                    start=j+1;
+
+                    break;
+
+                }
+
+            }
+
+
+
+            set.add(c);
+
+        }
+
+    }
+
+
+
+    return max;
+
+}<s
